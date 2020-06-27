@@ -5,6 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public float speed;
+    public int health;
 
     private Rigidbody2D rb;
     private Vector2 moveVelocity;
@@ -18,13 +19,30 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector2 moveInput = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+        Vector2 moveInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         moveVelocity = moveInput.normalized * speed;
     }
 
     private void FixedUpdate()
     {
         rb.MovePosition(rb.position + moveVelocity * Time.fixedDeltaTime);
+    }
+
+    public void TakeDamage(int damage)
+    {
+        health = health - damage;
+        Debug.Log(health);
+
+        if (health <= 0)
+        {
+            Debug.Log("YOU DIED");
+        }
+
+    }
+
+    private void SwitchWeapon()
+    {
+
     }
 
 }

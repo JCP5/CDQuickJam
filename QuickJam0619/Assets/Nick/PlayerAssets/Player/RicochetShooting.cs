@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Shooting : MonoBehaviour
+public class RicochetShooting : MonoBehaviour
 {
 
     public GameObject shot;
+
+    public Vector3 offset;
 
     private Transform playerPos;
 

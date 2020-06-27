@@ -10,15 +10,8 @@ public class ProjectileMovement : MonoBehaviour
 
     private Vector2 projectilePos;
 
-    private Vector2 target_transform;
-
-    private float x_velocity;
-    private float y_velocity;
-
-    private Vector2 projectile_velocity;
-    private Vector2 projectile_direction;
-    private float new_x;
-    private float new_y;
+    private Vector2 projectileVelocity;
+    private Vector2 projectileDirection;
 
     public float speed;
 
@@ -28,13 +21,17 @@ public class ProjectileMovement : MonoBehaviour
     void Start()
     {
         //This part took me forever to understand, if you don't include a z value here it will always return the 
-        //position of the 
+        //position of the camera
         target = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, -Camera.main.transform.position.z));
         playerPos = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>().position;
 
-        projectile_velocity = target - playerPos;
-        projectile_direction = projectile_velocity.normalized;
+        projectileVelocity = target - playerPos;
+        projectileDirection = projectileVelocity.normalized;
 
+        float angle = Mathf.Atan2(projectileDirection.y, projectileDirection.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+
+        //Despawn the projectile after a little while
         Destroy(gameObject, projectileLifeTime);
     }
 
@@ -42,6 +39,14 @@ public class ProjectileMovement : MonoBehaviour
     void Update()
     {
         projectilePos = transform.position;
-        transform.position = projectilePos + (projectile_direction * speed * Time.deltaTime);
+        transform.position = projectilePos + (projectileDirection * speed * Time.deltaTime);
+
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        projectileDirection = Vector2.Reflect(projectileDirection, collision.contacts[0].normal);
+        float angle = Mathf.Atan2(projectileDirection.y, projectileDirection.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
     }
 }
