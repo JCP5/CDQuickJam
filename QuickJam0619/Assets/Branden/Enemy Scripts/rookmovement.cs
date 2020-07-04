@@ -108,7 +108,7 @@ public class rookmovement : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Player") || (collision.gameObject.CompareTag("Walls")))
+        if (collision.gameObject.CompareTag("Player") || (collision.gameObject.CompareTag("Walls")) || (collision.gameObject.CompareTag("Obstacles")))
         {
             StartCoroutine("Stop");
         }
