@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ProjectileMovement : MonoBehaviour
+public class RicochetProjectileBehaviour : MonoBehaviour
 {
 
     private Vector2 target;

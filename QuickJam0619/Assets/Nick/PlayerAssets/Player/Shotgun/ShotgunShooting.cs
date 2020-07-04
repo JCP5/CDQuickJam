@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShotgunShooting : MonoBehaviour
+public class ShotgunShooting : ShootingBase
 {
     public GameObject shot;
     public float deadZoneSize;
@@ -22,6 +22,7 @@ public class ShotgunShooting : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        ammoScript = gameObject.GetComponent<AmmoControl>();
     }
 
     // Update is called once per frame
@@ -64,6 +65,8 @@ public class ShotgunShooting : MonoBehaviour
                 bullet = Instantiate(shot, spawnLocation, Quaternion.identity);
                 bullet.GetComponent<ShotgunProjectileMovement>().adjustmentAngle = 0;
             }
+
+            FireShot();
 
         }
     }

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RicochetShooting : MonoBehaviour
+public class RicochetShooting : ShootingBase
 {
 
     public GameObject shot;
@@ -15,6 +15,8 @@ public class RicochetShooting : MonoBehaviour
     void Start()
     {
         playerPos = GetComponent<Transform>();
+
+        ammoScript = gameObject.GetComponent<AmmoControl>();
     }
 
     // Update is called once per frame
@@ -23,6 +25,7 @@ public class RicochetShooting : MonoBehaviour
         if(Input.GetMouseButtonDown(0))
         {
             Instantiate(shot, playerPos.position, Quaternion.identity);
+            FireShot();
         }
     }
 }
