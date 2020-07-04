@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class checkmovement : MonoBehaviour
+public class checkermovement : MonoBehaviour
 {
     public float speed = 2.5f;
 
