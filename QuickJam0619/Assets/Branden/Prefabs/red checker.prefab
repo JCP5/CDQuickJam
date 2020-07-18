@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3411229775348411162}
   - component: {fileID: 3411229775348411161}
   - component: {fileID: 8788406765540986641}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: red checker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -100,7 +100,7 @@ MonoBehaviour:
   attackCoolDown: 1.5
   attackCoolDownTimer: 0
   playerRelativePosition: {x: 0, y: 0, z: 0}
-  player: {fileID: 282974025141513435, guid: bf491909c0254f944b8c1e7f61af0f60, type: 3}
+  player: {fileID: 9159012629504833472, guid: 34159fa4529e43b4a886f8332c4700b4, type: 3}
   moving: 0
 --- !u!50 &3411229775348411161
 Rigidbody2D:
