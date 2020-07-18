@@ -6,18 +6,6 @@ public class EnemyHealth : MonoBehaviour
 {
     public int Health;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void TakeDamage(int Damage)
     {
         Health = Health - Damage;
@@ -25,6 +13,18 @@ public class EnemyHealth : MonoBehaviour
         if (Health <= 0)
         {
             Destroy(gameObject);
+        }
+    }
+
+    private void OnDestroy()
+    {
+        try
+        {
+            Spawner.instance.SubtractNumOfEnemies();
+        }
+        catch
+        {
+            Debug.LogError("No Spawner Found");
         }
     }
 }

@@ -38,6 +38,7 @@ public class GunControl : MonoBehaviour
             {
                 Debug.Log("Gun activated");
                 guns[i].enabled = true;
+                AmmoUI.instance.ChangeAmmoType(i);
             }
             else
             {
