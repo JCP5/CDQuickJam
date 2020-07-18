@@ -22,7 +22,9 @@ public class RicochetShooting : ShootingBase
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetMouseButtonDown(0))
+        UniversalUpdateBehaviour();
+
+        if (Input.GetMouseButtonDown(0) && CanShoot())
         {
             Instantiate(shot, playerPos.position, Quaternion.identity);
             FireShot();

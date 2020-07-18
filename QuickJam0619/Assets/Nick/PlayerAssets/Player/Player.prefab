@@ -495,7 +495,7 @@ GameObject:
   - component: {fileID: 1329511505742932162}
   - component: {fileID: 3796811756828091874}
   - component: {fileID: -9197840312950533492}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -581,7 +581,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0
-  health: 0
 --- !u!50 &951863266767407636
 Rigidbody2D:
   serializedVersion: 4
@@ -633,6 +632,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AmmoPerShot: 1
   StartingAmmoCount: 5
+  FireRate: 1
   shot: {fileID: 6504329417933107617, guid: b0ef2d39a50f82c4692af2c9e781a040, type: 3}
   deadZoneSize: 2
   bullets: 10
@@ -651,6 +651,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AmmoPerShot: 1
   StartingAmmoCount: 5
+  FireRate: 1
   shot: {fileID: 6511021928069198784, guid: 3f050dea91bf93b4dbc2bcac68284a1d, type: 3}
   offset: {x: 0, y: 0, z: 0}
 --- !u!114 &-5753399736267070723
@@ -667,6 +668,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AmmoPerShot: 1
   StartingAmmoCount: 5
+  FireRate: 1
   shot: {fileID: 4204699865822389431, guid: 47431e4d790150442bb3acd9f31c93d9, type: 3}
   offset: {x: 0, y: 0, z: 0}
 --- !u!114 &-6879292848472821651
@@ -682,7 +684,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AmmoPerShot: 1
-  StartingAmmoCount: 5
+  StartingAmmoCount: 2
+  FireRate: 2
   Shot: {fileID: 478510660987506946, guid: 92df03c84d932c84a8bf1dd268eedb93, type: 3}
 --- !u!114 &5950014563028515336
 MonoBehaviour:
@@ -698,6 +701,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AmmoPerShot: 1
   StartingAmmoCount: 2
+  FireRate: 0
   shot: {fileID: 4420979085224699804, guid: d8992019af2320b4db3ede2cb0b9323c, type: 3}
   ChargeTime: 3
   BeamSize: 2
@@ -716,6 +720,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AmmoPerShot: 1
   StartingAmmoCount: 5
+  FireRate: 1
   Shot: {fileID: 531040700325857938, guid: fd3f8821488e3164f883802f44cf1141, type: 3}
 --- !u!114 &3796811756828091874
 MonoBehaviour:

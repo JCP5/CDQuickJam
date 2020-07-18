@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7749351003763251884}
   - component: {fileID: -2055734172062754016}
   - component: {fileID: -4691463365992684245}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: HomingProjectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
