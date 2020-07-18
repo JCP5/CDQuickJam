@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4770957707862820946}
   - component: {fileID: 2998794358041926093}
   - component: {fileID: -2068902142187388182}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: ScatterShotPreSplit
   m_TagString: Untagged
   m_Icon: {fileID: 0}

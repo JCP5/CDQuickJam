@@ -29,7 +29,9 @@ public class TargetBeamShooting : ShootingBase
     void Update()
     {
 
-        if (Input.GetMouseButton(0))
+        UniversalUpdateBehaviour();
+
+        if (Input.GetMouseButton(0) && CanShoot())
         {
             if (remainingChargeTime <= 0)
             {
