@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7033320495361767363}
   - component: {fileID: 7033320495361767360}
   - component: {fileID: 7033320495361767361}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cannon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -145,7 +145,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firePoint: {fileID: 7033320495380282313}
-  playerPos: {fileID: 0}
+  playerPos: {fileID: 9159012629504833472, guid: 34159fa4529e43b4a886f8332c4700b4,
+    type: 3}
   cannonBallPreFab: {fileID: 5185175832810073389, guid: 4a38abf974dfe6b48a6c4b163a87eb95,
     type: 3}
   rotationSpeed: 1
@@ -161,7 +162,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7033320495380282313}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: FirePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}

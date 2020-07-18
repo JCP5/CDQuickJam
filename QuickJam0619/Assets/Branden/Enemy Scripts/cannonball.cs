@@ -8,8 +8,6 @@ public class cannonball : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-
-        Debug.Log("??");
         if(collision.gameObject.CompareTag("Player") || (collision.gameObject.CompareTag("Walls")))
         {
             Instantiate(cannonHitParticles, transform.position, Quaternion.identity);
