@@ -10,6 +10,7 @@ public class checkermovement : MonoBehaviour
     public float attackCoolDownTimer = 0f;
     public int damageDealt = 20;
 
+    public GameObject deathParticle;
     public Vector3 playerRelativePosition;
     public Transform player;
     public bool moving;
@@ -124,5 +125,10 @@ public class checkermovement : MonoBehaviour
                 Debug.LogError("PlayerHealth not found");
             }
         }
+    }
+
+    private void OnDestroy()
+    {
+        Instantiate(deathParticle, transform.position, Quaternion.identity);
     }
 }

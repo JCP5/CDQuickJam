@@ -14,6 +14,7 @@ public class rookmovement : MonoBehaviour
     public float knockBackStrength = 2f;
     public float knockBackTime = 0.1f;
 
+    public GameObject deathparticle;
     private Vector3 playerRelativePosition;
     private Vector2 moveDir;
     public Transform player;
@@ -130,5 +131,10 @@ public class rookmovement : MonoBehaviour
                 StartCoroutine("Stop");
             }
         }
+    }
+
+    private void OnDestroy()
+    {
+        Instantiate(deathparticle, transform.position, Quaternion.identity);
     }
 }

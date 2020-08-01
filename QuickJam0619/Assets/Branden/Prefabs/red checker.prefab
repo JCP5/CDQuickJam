@@ -101,6 +101,8 @@ MonoBehaviour:
   attackCoolDown: 1.5
   attackCoolDownTimer: 0
   damageDealt: 20
+  deathParticle: {fileID: 4259500234756179054, guid: 479988f830a39f54c976d3937115e46f,
+    type: 3}
   playerRelativePosition: {x: 0, y: 0, z: 0}
   player: {fileID: 9159012629504833472, guid: 34159fa4529e43b4a886f8332c4700b4, type: 3}
   moving: 0
@@ -153,4 +155,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b9f6773b357fa743af6a5095bea8605, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHealth: 100
   Health: 0
