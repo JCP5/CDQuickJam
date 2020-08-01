@@ -150,6 +150,8 @@ MonoBehaviour:
     type: 3}
   cannonBallPreFab: {fileID: 5185175832810073389, guid: 4a38abf974dfe6b48a6c4b163a87eb95,
     type: 3}
+  deathParticle: {fileID: 4259500234756179054, guid: 479988f830a39f54c976d3937115e46f,
+    type: 3}
   rotationSpeed: 1
   shotCoolDown: 1.5
   shotCoolDownTimer: 0
@@ -166,6 +168,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b9f6773b357fa743af6a5095bea8605, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHealth: 100
   Health: 0
 --- !u!1 &7033320495380282318
 GameObject:

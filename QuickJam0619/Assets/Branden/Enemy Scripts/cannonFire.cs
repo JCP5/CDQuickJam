@@ -9,6 +9,7 @@ public class cannonFire : MonoBehaviour
     public Transform playerPos;
 
     public GameObject cannonBallPreFab;
+    public GameObject deathParticle;
 
     public float rotationSpeed = 2f;
 
@@ -51,5 +52,10 @@ public class cannonFire : MonoBehaviour
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         Quaternion rotation = Quaternion.AngleAxis(angle + offset, Vector3.forward);
         transform.rotation = Quaternion.Slerp(transform.rotation, rotation, rotationSpeed * Time.deltaTime);
+    }
+
+    private void OnDestroy()
+    {
+        Instantiate(deathParticle, transform.position, Quaternion.identity);
     }
 }
