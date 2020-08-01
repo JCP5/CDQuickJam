@@ -33,8 +33,6 @@ public class ScatterShotProjectilePostSplitBehaviour : MonoBehaviour
             collision.gameObject.GetComponent<EnemyHealth>().TakeDamage(DamageDealt);
         }
 
-
-
         Destroy(gameObject);
     }
 }

@@ -9,6 +9,8 @@ public class ShotgunProjectileMovement : MonoBehaviour
     public float speed;
     public float projectileLifeTime;
 
+    public int DamageDealt;
+
     private Vector2 target;
     private Vector2 playerPos;
     private Vector2 projectilePos;
@@ -43,6 +45,11 @@ public class ShotgunProjectileMovement : MonoBehaviour
     {
         Debug.Log(collision.gameObject.tag);
         string collisionTag = collision.gameObject.tag;
+
+        if (collision.gameObject.GetComponent<EnemyHealth>() != null)
+        {
+            collision.gameObject.GetComponent<EnemyHealth>().TakeDamage(DamageDealt);
+        }
 
         Destroy(gameObject);
     }
