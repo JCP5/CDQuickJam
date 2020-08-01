@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7033320495361767363}
   - component: {fileID: 7033320495361767360}
   - component: {fileID: 7033320495361767361}
+  - component: {fileID: -997296234353802855}
   m_Layer: 10
   m_Name: Cannon
   m_TagString: Untagged
@@ -153,6 +154,19 @@ MonoBehaviour:
   shotCoolDown: 1.5
   shotCoolDownTimer: 0
   shotForce: 10
+--- !u!114 &-997296234353802855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7033320495361767366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b9f6773b357fa743af6a5095bea8605, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Health: 0
 --- !u!1 &7033320495380282318
 GameObject:
   m_ObjectHideFlags: 0

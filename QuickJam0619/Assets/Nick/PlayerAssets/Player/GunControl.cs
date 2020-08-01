@@ -50,6 +50,7 @@ public class GunControl : MonoBehaviour
         Debug.Log(activeGun);
 
         ammoScript.SetAmmoRemaining(guns[activeGun].GetStartingAmmoCount());
+        AmmoUI.instance.SetAmmo(guns[activeGun].GetStartingAmmoCount());
 
     }
 }

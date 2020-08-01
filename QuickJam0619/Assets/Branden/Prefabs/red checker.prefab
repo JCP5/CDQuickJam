@@ -13,7 +13,8 @@ GameObject:
   - component: {fileID: 3411229775348411162}
   - component: {fileID: 3411229775348411161}
   - component: {fileID: 8788406765540986641}
-  m_Layer: 10
+  - component: {fileID: 7651518539504106988}
+  m_Layer: 12
   m_Name: red checker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -99,6 +100,7 @@ MonoBehaviour:
   speed: 2.5
   attackCoolDown: 1.5
   attackCoolDownTimer: 0
+  damageDealt: 20
   playerRelativePosition: {x: 0, y: 0, z: 0}
   player: {fileID: 9159012629504833472, guid: 34159fa4529e43b4a886f8332c4700b4, type: 3}
   moving: 0
@@ -139,3 +141,16 @@ CircleCollider2D:
   m_Offset: {x: -0.013731003, y: 0}
   serializedVersion: 2
   m_Radius: 0.44232976
+--- !u!114 &7651518539504106988
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3411229775348411165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b9f6773b357fa743af6a5095bea8605, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Health: 0

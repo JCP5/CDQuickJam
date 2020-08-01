@@ -31,7 +31,7 @@ public class AmmoUI : MonoBehaviour
         }
     }
 
-    public void UpdateAmmo(int ammo)
+    public void SetAmmo(int ammo)
     {
         ammoCount.text = ammo.ToString();
     }

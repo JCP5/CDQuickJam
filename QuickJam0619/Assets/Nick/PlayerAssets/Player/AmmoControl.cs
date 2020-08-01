@@ -27,6 +27,7 @@ public class AmmoControl : MonoBehaviour
     public void ShotFired(int ammoReduction)
     {
         ammoRemaining = ammoRemaining - ammoReduction;
+        AmmoUI.instance.SetAmmo(ammoRemaining);
 
         if (ammoRemaining <= 0)
         {

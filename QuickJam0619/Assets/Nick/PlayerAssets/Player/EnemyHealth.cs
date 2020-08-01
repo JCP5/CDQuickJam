@@ -4,7 +4,13 @@ using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
+    public int maxHealth = 100;
     public int Health;
+
+    private void Start()
+    {
+        maxHealth = Health;
+    }
 
     public void TakeDamage(int Damage)
     {

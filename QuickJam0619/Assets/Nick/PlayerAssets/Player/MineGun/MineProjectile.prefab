@@ -104,6 +104,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Destination: {x: 3.0682678, y: 4.464599}
   ProjectileSpeed: 0.1
+  explosionPrefab: {fileID: 1827234932764458894, guid: 566ff302fccb3414d84a14f4f9cb5881,
+    type: 3}
   DamageDealt: 1
   Lifetime: 15
   MineScale: {x: 2, y: 2}
@@ -126,7 +128,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
