@@ -98,7 +98,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   projectileLifeTime: 5
-  DamageDealt: 0
+  DamageDealt: 20
 --- !u!58 &-3953002063071607289
 CircleCollider2D:
   m_ObjectHideFlags: 0

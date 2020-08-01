@@ -114,7 +114,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5bf953381adbe74299d116178fb7130, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DamageDealt: 1
+  DamageDealt: 20
   projectileDirection: {x: 0, y: 0}
   speed: 1
 --- !u!50 &6424427651461259806

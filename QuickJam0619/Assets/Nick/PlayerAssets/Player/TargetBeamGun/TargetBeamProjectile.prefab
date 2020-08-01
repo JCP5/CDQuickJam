@@ -94,4 +94,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c50da22527084947bf53eabaec0f386, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LifeTime: 1.5
+  DamageDealt: 100000
+  explosionPrefab: {fileID: 0}

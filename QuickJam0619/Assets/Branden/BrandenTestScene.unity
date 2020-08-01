@@ -307,6 +307,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 5950014563028515336, guid: 6474dba708bd83147914ed0de5c37636,
+        type: 3}
+      propertyPath: BeamSize
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5950014563028515336, guid: 6474dba708bd83147914ed0de5c37636,
+        type: 3}
+      propertyPath: DamageDealt
+      value: 100
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6474dba708bd83147914ed0de5c37636, type: 3}
 --- !u!4 &33446737 stripped
@@ -10863,7 +10873,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &2073312286
 MonoBehaviour:
   m_ObjectHideFlags: 0

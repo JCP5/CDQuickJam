@@ -6,7 +6,7 @@ public class TargetBeamProjectileBehaviour : MonoBehaviour
 {
     //public float LifeTime;
     float BeamSize;
-    int DamageDealt;
+    public int DamageDealt;
     Player player;
     TargetBeamShooting tbs;
 
