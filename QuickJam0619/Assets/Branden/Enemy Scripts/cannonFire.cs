@@ -20,6 +20,7 @@ public class cannonFire : MonoBehaviour
     void Start()
     {
         shotCoolDownTimer = shotCoolDown;
+        playerPos = FindObjectOfType<Player>().transform;
     }
 
     void Update()

@@ -36,13 +36,27 @@ public class DiceBombMovement : MonoBehaviour
 
     public void Explode()
     {
+        Destroy(this.gameObject);
+        //deals damage to player/enemies?
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            Explode();
+        }
+    }
+
+    private void OnDestroy()
+    {
         Instantiate(explosionParticles, transform.position, Quaternion.identity);
 
         Collider2D[] inExplosion = Physics2D.OverlapCircleAll(this.transform.position, explosionRadius);
-        
-        foreach(Collider2D col in inExplosion)
+
+        foreach (Collider2D col in inExplosion)
         {
-            if(col.TryGetComponent(out PlayerHealth ph))//If col has the PlayerHealth script
+            if (col.TryGetComponent(out PlayerHealth ph))//If col has the PlayerHealth script
             {
                 ph.TakeDamage(damageDealt);
             }
@@ -51,8 +65,5 @@ public class DiceBombMovement : MonoBehaviour
                 //Stuff
             }
         }
-
-        Destroy(this.gameObject);
-        //deals damage to player/enemies?
     }
 }

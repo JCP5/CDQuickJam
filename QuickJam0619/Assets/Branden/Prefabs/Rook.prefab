@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3862441351291158362}
   - component: {fileID: 3862441351291158361}
   - component: {fileID: -8462793595265619163}
-  m_Layer: 12
+  m_Layer: 13
   m_Name: Rook
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 672cb323e9e0aa74f80806baef8ba1a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 7
+  speed: 11
   attackCoolDown: 1.5
   attackCoolDownTimer: 0
   damageDealt: 20

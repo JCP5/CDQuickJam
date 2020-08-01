@@ -112,7 +112,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f923f64115271045b41187576c973e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
+  speed: 8
   projectileLifeTime: 5
   SplitProjectileCount: 15
   SplitSpawnOffset: 0.2
