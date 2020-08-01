@@ -17,6 +17,8 @@ public class RicochetProjectileBehaviour : MonoBehaviour
 
     public float projectileLifeTime;
 
+    public int DamageDealt;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -45,6 +47,11 @@ public class RicochetProjectileBehaviour : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        if (collision.gameObject.GetComponent<EnemyHealth>() != null)
+        {
+            collision.gameObject.GetComponent<EnemyHealth>().TakeDamage(DamageDealt);
+        }
+
         projectileDirection = Vector2.Reflect(projectileDirection, collision.contacts[0].normal);
         float angle = Mathf.Atan2(projectileDirection.y, projectileDirection.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
