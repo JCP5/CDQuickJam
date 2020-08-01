@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3862441351291158366}
   - component: {fileID: 3862441351291158362}
   - component: {fileID: 3862441351291158361}
-  m_Layer: 10
+  m_Layer: 12
   m_Name: Rook
   m_TagString: Untagged
   m_Icon: {fileID: 0}

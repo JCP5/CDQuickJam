@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7033320495361767363}
   - component: {fileID: 7033320495361767360}
   - component: {fileID: 7033320495361767361}
-  m_Layer: 10
+  m_Layer: 12
   m_Name: Cannon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -162,7 +162,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7033320495380282313}
-  m_Layer: 10
+  m_Layer: 12
   m_Name: FirePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}

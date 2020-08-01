@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9159012628439285234}
   - component: {fileID: 9159012628439285233}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Point Light 2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -83,7 +83,7 @@ GameObject:
   - component: {fileID: 9159012628462256356}
   - component: {fileID: 9159012628462256358}
   - component: {fileID: 9159012628462256357}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: Image (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -157,7 +157,7 @@ GameObject:
   - component: {fileID: 9159012628697362878}
   - component: {fileID: 9159012628697362864}
   - component: {fileID: 9159012628697362879}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -233,8 +233,8 @@ GameObject:
   - component: {fileID: 9159012629504833473}
   - component: {fileID: 9159012629504833474}
   - component: {fileID: 9159012629504833475}
-  m_Layer: 0
-  m_Name: diceman 1
+  m_Layer: 11
+  m_Name: Diceman
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -366,7 +366,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9159012629681838729}
   - component: {fileID: 9159012629681838730}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: Hearts
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -430,7 +430,7 @@ GameObject:
   - component: {fileID: 9159012629905555474}
   - component: {fileID: 9159012629905555476}
   - component: {fileID: 9159012629905555475}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: Image (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -504,7 +504,7 @@ GameObject:
   - component: {fileID: 9159012630192321623}
   - component: {fileID: 9159012630192321577}
   - component: {fileID: 9159012630192321576}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -583,7 +583,7 @@ GameObject:
   - component: {fileID: 9159012630272201770}
   - component: {fileID: 9159012630272201769}
   - component: {fileID: 9159012630272201768}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: PlayerUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}

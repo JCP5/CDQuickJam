@@ -17,9 +17,9 @@ TagManager:
   - 
   - obstacles
   - enemyproj
+  - playerproj
+  - player
   - enemy
-  - 
-  - 
   - 
   - 
   - 
@@ -42,4 +42,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: UI
+    uniqueID: 2268471661
+    locked: 0
+  - name: Particles
+    uniqueID: 2650887365
     locked: 0
