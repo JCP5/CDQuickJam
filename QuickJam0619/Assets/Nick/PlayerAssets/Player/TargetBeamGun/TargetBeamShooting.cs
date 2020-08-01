@@ -31,23 +31,21 @@ public class TargetBeamShooting : ShootingBase
 
         UniversalUpdateBehaviour();
 
+        //Pressing Down on LMC will instantiate the target beam prefab
+        //the target beam prefeb will then destroy itself
+        //by listening to MouseButtonUp and an animation event
+        if (Input.GetMouseButtonDown(0))
+        {
+            target = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, -Camera.main.transform.position.z));
+
+            Instantiate(shot, target, Quaternion.identity);
+        }
+
         if (Input.GetMouseButton(0) && CanShoot())
         {
             if (remainingChargeTime <= 0)
             {
-                target = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, -Camera.main.transform.position.z));
-
-                Instantiate(shot, target, Quaternion.identity);
-
-                foreach (Collider2D currentCollider in Physics2D.OverlapCircleAll(target, BeamSize))
-                {
-                    if (currentCollider.GetComponent<EnemyHealth>() != null)
-                    {
-                        currentCollider.GetComponent<EnemyHealth>().TakeDamage(DamageDealt);
-                    }
-                }
-
-                FireShot();
+                //FireShot();
 
                 remainingChargeTime = ChargeTime;
             }
