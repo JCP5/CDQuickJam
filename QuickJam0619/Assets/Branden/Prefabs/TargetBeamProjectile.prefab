@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7846126077368147825}
   - component: {fileID: 7846126077368147830}
   - component: {fileID: 7846126077368147831}
+  - component: {fileID: 1452282070}
   m_Layer: 0
   m_Name: TargetBeamProjectile
   m_TagString: Untagged
@@ -103,6 +104,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1452282070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7846126077368147828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c50da22527084947bf53eabaec0f386, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explosionPrefab: {fileID: 4259500234756179054, guid: 479988f830a39f54c976d3937115e46f,
+    type: 3}
 --- !u!1 &7846126078084848988
 GameObject:
   m_ObjectHideFlags: 0

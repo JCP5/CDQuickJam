@@ -94,6 +94,7 @@ GameObject:
   - component: {fileID: 3796811756828091874}
   - component: {fileID: -9197840312950533492}
   - component: {fileID: 709986811}
+  - component: {fileID: 568204314}
   m_Layer: 11
   m_Name: Player
   m_TagString: Player
@@ -300,7 +301,7 @@ MonoBehaviour:
   AmmoPerShot: 1
   StartingAmmoCount: 2
   FireRate: 0
-  shot: {fileID: 4420979085224699804, guid: d8992019af2320b4db3ede2cb0b9323c, type: 3}
+  shot: {fileID: 7846126077368147828, guid: 8a9ec83f965c9484ba1e03c2f2580fec, type: 3}
   ChargeTime: 3
   BeamSize: 2
   DamageDealt: 5
@@ -358,3 +359,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   maxHealth: 100
+--- !u!95 &568204314
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 951863266767407659}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

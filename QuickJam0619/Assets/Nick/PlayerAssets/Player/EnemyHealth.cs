@@ -9,7 +9,7 @@ public class EnemyHealth : MonoBehaviour
 
     private void Start()
     {
-        maxHealth = Health;
+        Health = maxHealth;
     }
 
     public void TakeDamage(int Damage)
