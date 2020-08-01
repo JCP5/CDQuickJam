@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    public static Spawner spawner;
+    public static Spawner instance;
     public GameObject[] enemies;
 
     public float wave = 1;
@@ -12,16 +12,15 @@ public class Spawner : MonoBehaviour
 
     public Transform[] spawnSpots;
 
-    private float timeBetweenSpawns;
+    public float timeBetweenSpawns;
     public float startTimeBetweenSpawns = 10;
 
     // Start is called before the first frame update
     void Start()
     {
-        if (spawner == null)
-            spawner = this;
-        else
-            Destroy(this.gameObject);
+        InitializeSpawner();
+
+        SpawnEnemies();
 
         timeBetweenSpawns = startTimeBetweenSpawns;
     }
@@ -31,11 +30,11 @@ public class Spawner : MonoBehaviour
     {
         if (timeBetweenSpawns <= 0)
         {
-            wave++;
+            timeBetweenSpawns = startTimeBetweenSpawns + wave;
+
+            AddWave();
 
             SpawnEnemies();
-
-            timeBetweenSpawns = startTimeBetweenSpawns + wave;
         }
         else
         {
@@ -58,11 +57,25 @@ public class Spawner : MonoBehaviour
 
         if (numOfEnemies <= 0)
         {
-            wave++;
+            AddWave();
 
             SpawnEnemies();
 
             timeBetweenSpawns = startTimeBetweenSpawns + wave;
         }
+    }
+
+    public void InitializeSpawner()
+    {
+        if (instance == null)
+            instance = this;
+        else
+            Destroy(this.gameObject);
+    }
+
+    void AddWave()
+    {
+        wave++;
+        WaveDisplay.instance.SetWave((int)wave);
     }
 }

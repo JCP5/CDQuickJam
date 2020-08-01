@@ -4,18 +4,12 @@ using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
+    public int maxHealth = 100;
     public int Health;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        maxHealth = Health;
     }
 
     public void TakeDamage(int Damage)
@@ -25,6 +19,18 @@ public class EnemyHealth : MonoBehaviour
         if (Health <= 0)
         {
             Destroy(gameObject);
+        }
+    }
+
+    private void OnDestroy()
+    {
+        try
+        {
+            Spawner.instance.SubtractNumOfEnemies();
+        }
+        catch
+        {
+            Debug.LogError("No Spawner Found");
         }
     }
 }

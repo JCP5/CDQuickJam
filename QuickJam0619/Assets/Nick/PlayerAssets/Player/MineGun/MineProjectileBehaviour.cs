@@ -7,6 +7,7 @@ public class MineProjectileBehaviour : MonoBehaviour
 
     public Vector2 Destination;
     public float ProjectileSpeed;
+    public GameObject explosionPrefab;
 
     public int DamageDealt;
 
@@ -46,6 +47,7 @@ public class MineProjectileBehaviour : MonoBehaviour
             }
         }
 
+        Instantiate(explosionPrefab, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
 }

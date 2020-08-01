@@ -9,6 +9,7 @@ public class rookmovement : MonoBehaviour
 
     public float attackCoolDown = 1.5f;
     public float attackCoolDownTimer = 0f;
+    public int damageDealt = 20;
 
     public float knockBackStrength = 2f;
     public float knockBackTime = 0.1f;
@@ -26,45 +27,54 @@ public class rookmovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         attackCoolDownTimer = attackCoolDown;
         moving = false;
+
+        player = FindObjectOfType<Player>().transform;
     }
 
 
     private void FixedUpdate()
     {
-        playerRelativePosition = transform.InverseTransformPoint(player.position);
-
-        if (attackCoolDownTimer < 0)
+        try
         {
-            attackCoolDownTimer = 0;
+            playerRelativePosition = transform.InverseTransformPoint(player.position);
+
+            if (attackCoolDownTimer < 0)
+            {
+                attackCoolDownTimer = 0;
+            }
+
+            if (attackCoolDownTimer > 0 && moving == false)
+                attackCoolDownTimer -= Time.deltaTime;
+
+            if (attackCoolDownTimer == 0 && moving == false)
+            {
+                if (Mathf.Abs(playerRelativePosition.x) < (Mathf.Abs(playerRelativePosition.y)) && moving == false)
+                {
+                    if (playerRelativePosition.y >= 0)
+                    {
+                        MoveUp();
+                    }
+                    else
+                    {
+                        MoveDown();
+                    }
+                }
+                else if (Mathf.Abs(playerRelativePosition.x) > (Mathf.Abs(playerRelativePosition.y)) && moving == false)
+                {
+                    if (playerRelativePosition.x >= 0)
+                    {
+                        MoveRight();
+                    }
+                    else
+                    {
+                        MoveLeft();
+                    }
+                }
+            }
         }
-
-        if (attackCoolDownTimer > 0 && moving == false)
-            attackCoolDownTimer -= Time.deltaTime;
-
-        if (attackCoolDownTimer == 0 && moving == false)
+        catch
         {
-            if (Mathf.Abs(playerRelativePosition.x) < (Mathf.Abs(playerRelativePosition.y)) && moving == false)
-            {
-                if (playerRelativePosition.y >= 0)
-                {
-                    MoveUp();
-                }
-                else
-                {
-                    MoveDown();
-                }
-            }
-            else if (Mathf.Abs(playerRelativePosition.x) > (Mathf.Abs(playerRelativePosition.y)) && moving == false)
-            {
-                if (playerRelativePosition.x >= 0)
-                {
-                    MoveRight();
-                }
-                else
-                {
-                    MoveLeft();
-                }
-            }
+            Debug.Log("Player Not Found");
         }
     }
 
@@ -110,7 +120,15 @@ public class rookmovement : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player") || (collision.gameObject.CompareTag("Walls")) || (collision.gameObject.CompareTag("Obstacles")))
         {
-            StartCoroutine("Stop");
+            try
+            {
+                collision.gameObject.GetComponent<PlayerHealth>().TakeDamage(damageDealt);
+                StartCoroutine("Stop");
+            }
+            catch
+            {
+                StartCoroutine("Stop");
+            }
         }
     }
 }

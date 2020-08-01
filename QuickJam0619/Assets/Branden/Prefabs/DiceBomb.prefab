@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7105392449847727638}
   - component: {fileID: 7105392449847727642}
   - component: {fileID: 7105392449847727643}
+  - component: {fileID: 3343311640312527633}
   m_Layer: 12
   m_Name: DiceBomb
   m_TagString: Untagged
@@ -125,6 +126,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  explosionRadius: 1
+  damageDealt: 20
   explosionParticles: {fileID: 1827234932764458894, guid: 566ff302fccb3414d84a14f4f9cb5881,
     type: 3}
   player: {fileID: 9159012629504833472, guid: 34159fa4529e43b4a886f8332c4700b4, type: 3}
@@ -168,3 +171,16 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &3343311640312527633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7105392449847727633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b9f6773b357fa743af6a5095bea8605, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Health: 0

@@ -21,9 +21,11 @@ public class MineShooting : ShootingBase
     // Update is called once per frame
     void Update()
     {
+        UniversalUpdateBehaviour();
+
         GameObject createdShot;
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && CanShoot())
         {
             target = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, -Camera.main.transform.position.z));
             playerPos = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>().position;

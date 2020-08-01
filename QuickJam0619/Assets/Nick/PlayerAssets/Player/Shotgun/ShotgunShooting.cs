@@ -28,7 +28,10 @@ public class ShotgunShooting : ShootingBase
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+
+        UniversalUpdateBehaviour();
+
+        if (Input.GetMouseButtonDown(0) && CanShoot())
         {
             //Where did they click?
             target = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, -Camera.main.transform.position.z));

@@ -6,12 +6,23 @@ public class cannonball : MonoBehaviour
 {
     public GameObject cannonHitParticles;
 
+    public int damageDealt = 20;
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.CompareTag("Player") || (collision.gameObject.CompareTag("Walls")))
         {
-            Instantiate(cannonHitParticles, transform.position, Quaternion.identity);
-            Destroy(this.gameObject);
+            try
+            {
+                collision.gameObject.GetComponent<PlayerHealth>().TakeDamage(damageDealt);
+                Instantiate(cannonHitParticles, transform.position, Quaternion.identity);
+                Destroy(this.gameObject);
+            }
+            catch
+            {
+                Instantiate(cannonHitParticles, transform.position, Quaternion.identity);
+                Destroy(this.gameObject);
+            }
         }
     }
 }

@@ -72,7 +72,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 70b8b76b48f3b11419e3ef49451b9397, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -98,6 +98,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cannonHitParticles: {fileID: 5335091001715673643, guid: a8da7150df6d4a740998ce60c0ebd3f8,
     type: 3}
+  damageDealt: 20
 --- !u!50 &7209990113812304894
 Rigidbody2D:
   serializedVersion: 4

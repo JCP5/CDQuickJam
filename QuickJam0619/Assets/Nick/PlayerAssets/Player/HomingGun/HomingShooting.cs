@@ -20,7 +20,9 @@ public class HomingShooting : ShootingBase
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        UniversalUpdateBehaviour();
+
+        if (Input.GetMouseButtonDown(0) && CanShoot())
         {
             Instantiate(Shot, playerPos.position, Quaternion.identity);
             FireShot();

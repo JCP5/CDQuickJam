@@ -9,17 +9,27 @@ public class ShootingBase : MonoBehaviour
     protected AmmoControl ammoScript;
     public int AmmoPerShot;
     public int StartingAmmoCount;
+    
+    public float FireRate; //Time between shots
+    protected float FireRateTickingCooldown; //The ticking cooldown between shots
 
     // Start is called before the first frame update
     void Start()
     {
         ammoScript = gameObject.GetComponent<AmmoControl>();
+        FireRateTickingCooldown = 0.0f;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        UniversalUpdateBehaviour();
+    }
+
+    //Use this in children instead of base.Update so we don't change the access modifier on Update() which I'm scared of doing.
+    protected void UniversalUpdateBehaviour()
+    {
+        FireRateTickingCooldown = FireRateTickingCooldown - Time.deltaTime;
     }
 
     public int GetStartingAmmoCount()
@@ -30,5 +40,12 @@ public class ShootingBase : MonoBehaviour
     public void FireShot()
     {
         ammoScript.ShotFired(AmmoPerShot);
+        FireRateTickingCooldown = FireRate;
     }
+
+    public bool CanShoot()
+    {
+        return FireRateTickingCooldown <= 0;
+    }
+
 }
