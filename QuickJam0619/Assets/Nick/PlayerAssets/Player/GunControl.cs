@@ -9,6 +9,9 @@ public class GunControl : MonoBehaviour
 
     private AmmoControl ammoScript;
 
+    public float FireRateImprovementPercentage = 0;
+    public float MaxFireRateImprovementPercentage = 0;
+
     int activeGun;
 
     // Start is called before the first frame update
@@ -52,5 +55,10 @@ public class GunControl : MonoBehaviour
         ammoScript.SetAmmoRemaining(guns[activeGun].GetStartingAmmoCount());
         AmmoUI.instance.SetAmmo(guns[activeGun].GetStartingAmmoCount());
 
+    }
+
+    public void ImproveFireRate(float ImprovementPercentage)
+    {
+        FireRateImprovementPercentage = Mathf.Clamp(FireRateImprovementPercentage + ImprovementPercentage, 0, MaxFireRateImprovementPercentage);
     }
 }
