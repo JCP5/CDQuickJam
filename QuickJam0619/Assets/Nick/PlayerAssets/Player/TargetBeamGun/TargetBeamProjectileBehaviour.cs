@@ -11,6 +11,7 @@ public class TargetBeamProjectileBehaviour : MonoBehaviour
     TargetBeamShooting tbs;
 
     public GameObject explosionPrefab;
+    public int explosionScale;
 
     // Start is called before the first frame update
     void Start()

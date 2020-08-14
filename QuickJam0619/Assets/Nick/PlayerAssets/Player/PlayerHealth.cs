@@ -4,14 +4,12 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public static PlayerHealth instance;
     public float health;
     public float maxHealth;
 
-    void Awake()
-    {
-        instance = this;
-    }
+    public delegate void deathDelegate();
+    public event deathDelegate deathEvent;
+
     public void TakeDamage(int Damage)
     {
         health = health - Damage;
@@ -28,5 +26,10 @@ public class PlayerHealth : MonoBehaviour
     {
         FindObjectOfType<Spawner>().enabled = false;
         Debug.Log("Rest In Pepperoni");
+
+        if (deathEvent != null)
+        {
+            deathEvent();
+        }
     }
 }
