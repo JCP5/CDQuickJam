@@ -7,6 +7,9 @@ public class PlayerHealth : MonoBehaviour
     public float health;
     public float maxHealth;
 
+    public delegate void deathDelegate();
+    public event deathDelegate deathEvent;
+
     public void TakeDamage(int Damage)
     {
         health = health - Damage;
@@ -23,5 +26,10 @@ public class PlayerHealth : MonoBehaviour
     {
         FindObjectOfType<Spawner>().enabled = false;
         Debug.Log("Rest In Pepperoni");
+
+        if (deathEvent != null)
+        {
+            deathEvent();
+        }
     }
 }

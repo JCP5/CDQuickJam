@@ -17,6 +17,7 @@ public class cannonFire : MonoBehaviour
     public float shotCoolDownTimer = 0f;
 
     public float shotForce = 10f;
+
     void Start()
     {
         shotCoolDownTimer = shotCoolDown;
@@ -25,7 +26,15 @@ public class cannonFire : MonoBehaviour
 
     void Update()
     {
-        RotateTowards(playerPos.position);
+        try
+        {
+            RotateTowards(playerPos.position);
+        }
+        catch
+        {
+            
+        }
+
         if(shotCoolDownTimer > 0)
         {
             shotCoolDownTimer -= Time.deltaTime;
