@@ -185,3 +185,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 10
   Health: 0
+  hitSparks: {fileID: 7249088598687300452, guid: a83ecc80103997a42993cfd002150f71,
+    type: 3}

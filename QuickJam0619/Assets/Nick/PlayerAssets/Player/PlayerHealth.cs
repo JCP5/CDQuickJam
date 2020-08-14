@@ -4,9 +4,14 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
+    public static PlayerHealth instance;
     public float health;
     public float maxHealth;
 
+    void Awake()
+    {
+        instance = this;
+    }
     public void TakeDamage(int Damage)
     {
         health = health - Damage;

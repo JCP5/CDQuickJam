@@ -7,6 +7,8 @@ public class EnemyHealth : MonoBehaviour
     public int maxHealth = 100;
     public int Health;
 
+    public GameObject hitSparks;
+
     private void Start()
     {
         Health = maxHealth;
@@ -15,6 +17,7 @@ public class EnemyHealth : MonoBehaviour
     public void TakeDamage(int Damage)
     {
         Health = Health - Damage;
+        Instantiate(hitSparks, transform.position, transform.rotation);
 
         if (Health <= 0)
         {

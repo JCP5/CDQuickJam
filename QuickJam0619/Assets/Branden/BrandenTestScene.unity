@@ -310,7 +310,7 @@ PrefabInstance:
     - target: {fileID: 5950014563028515336, guid: 6474dba708bd83147914ed0de5c37636,
         type: 3}
       propertyPath: BeamSize
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5950014563028515336, guid: 6474dba708bd83147914ed0de5c37636,
         type: 3}
