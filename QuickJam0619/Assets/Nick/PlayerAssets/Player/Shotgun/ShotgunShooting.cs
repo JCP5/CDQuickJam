@@ -22,6 +22,7 @@ public class ShotgunShooting : ShootingBase
     // Start is called before the first frame update
     void Start()
     {
+        audSource = this.GetComponent<AudioSource>();
         ammoScript = gameObject.GetComponent<AmmoControl>();
     }
 
@@ -69,8 +70,8 @@ public class ShotgunShooting : ShootingBase
                 bullet.GetComponent<ShotgunProjectileMovement>().adjustmentAngle = 0;
             }
 
+            PlaySound();
             FireShot();
-
         }
     }
 }

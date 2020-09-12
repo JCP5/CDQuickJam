@@ -15,6 +15,7 @@ public class MineShooting : ShootingBase
     // Start is called before the first frame update
     void Start()
     {
+        audSource = this.GetComponent<AudioSource>();
         ammoScript = gameObject.GetComponent<AmmoControl>();
     }
 
@@ -33,6 +34,7 @@ public class MineShooting : ShootingBase
             createdShot = Instantiate(shot, playerPos, Quaternion.identity);
             createdShot.GetComponent<MineProjectileBehaviour>().Destination = target;
 
+            PlaySound();
             FireShot();
         }
     }

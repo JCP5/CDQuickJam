@@ -15,7 +15,7 @@ public class RicochetShooting : ShootingBase
     void Start()
     {
         playerPos = GetComponent<Transform>();
-
+        audSource = this.GetComponent<AudioSource>();
         ammoScript = gameObject.GetComponent<AmmoControl>();
     }
 
@@ -27,6 +27,7 @@ public class RicochetShooting : ShootingBase
         if (Input.GetMouseButtonDown(0) && CanShoot())
         {
             Instantiate(shot, playerPos.position, Quaternion.identity);
+            PlaySound();
             FireShot();
         }
     }

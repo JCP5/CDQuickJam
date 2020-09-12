@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class TargetBeamShooting : ShootingBase
 {
-
     public GameObject shot;
 
     public float ChargeTime;

@@ -15,6 +15,7 @@ public class HomingShooting : ShootingBase
 
         ammoScript = gameObject.GetComponent<AmmoControl>();
 
+        audSource = this.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
