@@ -51,7 +51,8 @@ public class Spawner : MonoBehaviour
     {
         for (int i = 0; i < wave; i++)
         {
-            Instantiate(enemies[Random.Range(0, enemies.Length - 1)], spawnSpots[Random.Range(0, spawnSpots.Length - 1)].position, Quaternion.identity);
+            numOfEnemies++;
+            Instantiate(enemies[Random.Range(0, enemies.Length)], spawnSpots[Random.Range(0, spawnSpots.Length - 1)].position, Quaternion.identity);
         }
     }
 

@@ -128,7 +128,7 @@ MonoBehaviour:
   speed: 5
   explosionRadius: 1
   damageDealt: 20
-  explosionParticles: {fileID: 1827234932764458894, guid: 566ff302fccb3414d84a14f4f9cb5881,
+  explosionParticles: {fileID: 7924173875884080736, guid: a1c258cffd8506d4da307add93c58e14,
     type: 3}
   player: {fileID: 9159012629504833472, guid: 34159fa4529e43b4a886f8332c4700b4, type: 3}
 --- !u!50 &7105392449847727642
@@ -183,4 +183,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b9f6773b357fa743af6a5095bea8605, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHealth: 10
   Health: 0
+  hitSparks: {fileID: 7249088598687300452, guid: a83ecc80103997a42993cfd002150f71,
+    type: 3}

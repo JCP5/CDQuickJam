@@ -14,7 +14,8 @@ GameObject:
   - component: {fileID: 3411229775348411161}
   - component: {fileID: 8788406765540986641}
   - component: {fileID: 7651518539504106988}
-  m_Layer: 12
+  - component: {fileID: 2891672829050887258}
+  m_Layer: 14
   m_Name: red checker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97,10 +98,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3722a645d395a1644ae14882fb38e853, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2.5
+  speed: 5
   attackCoolDown: 1.5
   attackCoolDownTimer: 0
   damageDealt: 20
+  deathParticle: {fileID: 4259500234756179054, guid: 479988f830a39f54c976d3937115e46f,
+    type: 3}
   playerRelativePosition: {x: 0, y: 0, z: 0}
   player: {fileID: 9159012629504833472, guid: 34159fa4529e43b4a886f8332c4700b4, type: 3}
   moving: 0
@@ -153,4 +156,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b9f6773b357fa743af6a5095bea8605, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHealth: 40
   Health: 0
+  hitSparks: {fileID: 7249088598687300452, guid: a83ecc80103997a42993cfd002150f71,
+    type: 3}
+--- !u!95 &2891672829050887258
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3411229775348411165}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6967cf1d12ca08348a174c21a48b597b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

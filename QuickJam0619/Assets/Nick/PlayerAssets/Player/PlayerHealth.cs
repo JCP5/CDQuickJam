@@ -25,9 +25,11 @@ public class PlayerHealth : MonoBehaviour
     //When armor is used as a second healthbar, this is the maximum amount of armor health the player can have.
     public float MaxArmorHealth = 0;
 
+    public delegate void deathDelegate();
+    public event deathDelegate deathEvent;
     public void TakeDamage(float Damage)
     {
-        switch(ArmorStyle)
+        switch (ArmorStyle)
         {
             // Normal no armor behaviour
             case (ArmorBehaviour.None):
@@ -159,5 +161,10 @@ public class PlayerHealth : MonoBehaviour
     {
         FindObjectOfType<Spawner>().enabled = false;
         Debug.Log("Rest In Pepperoni");
+
+        if (deathEvent != null)
+        {
+            deathEvent();
+        }
     }
 }

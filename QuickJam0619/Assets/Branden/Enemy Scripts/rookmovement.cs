@@ -14,20 +14,23 @@ public class rookmovement : MonoBehaviour
     public float knockBackStrength = 2f;
     public float knockBackTime = 0.1f;
 
+    public GameObject deathparticle;
     private Vector3 playerRelativePosition;
     private Vector2 moveDir;
     public Transform player;
 
     private Rigidbody2D rb;
 
+    private Animator rookAnimator;
+
     public bool moving;
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        rookAnimator = GetComponent<Animator>();
         attackCoolDownTimer = attackCoolDown;
         moving = false;
-
         player = FindObjectOfType<Player>().transform;
     }
 
@@ -80,6 +83,7 @@ public class rookmovement : MonoBehaviour
 
     private void MoveUp()
     {
+        rookAnimator.SetTrigger("MoveUp");
         moveDir = new Vector2(0, 1 * speed);
         moving = true;
         rb.velocity = moveDir;
@@ -87,6 +91,7 @@ public class rookmovement : MonoBehaviour
 
     private void MoveDown()
     {
+        rookAnimator.SetTrigger("MoveDown");
         moveDir = new Vector2(0, -1 * speed);
         moving = true;
         rb.velocity = moveDir;
@@ -108,6 +113,7 @@ public class rookmovement : MonoBehaviour
 
     IEnumerator Stop()
     {
+        rookAnimator.SetTrigger("Idle");
         moving = false;
         rb.velocity = new Vector2(0, 0);
         rb.AddForce(moveDir * -1 * knockBackStrength, ForceMode2D.Impulse);
@@ -130,5 +136,10 @@ public class rookmovement : MonoBehaviour
                 StartCoroutine("Stop");
             }
         }
+    }
+
+    private void OnDestroy()
+    {
+        Instantiate(deathparticle, transform.position, Quaternion.identity);
     }
 }

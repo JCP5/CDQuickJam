@@ -44,7 +44,7 @@ public class ShotgunShooting : ShootingBase
 
             //Rotate the projectile to face the direction it is travelling
             float angle = Mathf.Atan2(projectileDirection.y, projectileDirection.x) * Mathf.Rad2Deg;
-            transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+            //transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
 
             //Calculate where the projectile should spawn to include the deadzone
             spawnLocation = playerPos + (projectileDirection * deadZoneSize);

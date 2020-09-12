@@ -10,15 +10,18 @@ public class checkermovement : MonoBehaviour
     public float attackCoolDownTimer = 0f;
     public int damageDealt = 20;
 
+    public GameObject deathParticle;
     public Vector3 playerRelativePosition;
     public Transform player;
     public bool moving;
 
     private Rigidbody2D rb;
+    private Animator checkerAnimator;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        checkerAnimator = GetComponent<Animator>();
         attackCoolDownTimer = attackCoolDown;
         moving = false;
         player = FindObjectOfType<Player>().transform;
@@ -67,48 +70,57 @@ public class checkermovement : MonoBehaviour
 
     IEnumerator MoveUpLeft()
     {
+        checkerAnimator.SetTrigger("UpLeft");
         moving = false;
         attackCoolDownTimer = attackCoolDown;
         rb.velocity = new Vector2(-1,1) * speed;
 
         yield return new WaitForSeconds(.5f);
         rb.velocity = new Vector2(0, 0);
+        checkerAnimator.SetTrigger("Idle");
     }
 
     IEnumerator MoveUpRight()
     {
+        checkerAnimator.SetTrigger("UpRight");
         moving = false;
         attackCoolDownTimer = attackCoolDown;
         rb.velocity = new Vector2(1, 1) * speed;
 
         yield return new WaitForSeconds(.5f);
         rb.velocity = new Vector2(0, 0);
+        checkerAnimator.SetTrigger("Idle");
     }
 
     IEnumerator MoveDownLeft()
     {
+        checkerAnimator.SetTrigger("DownLeft");
         moving = false;
         attackCoolDownTimer = attackCoolDown;
         rb.velocity = new Vector2(-1, -1) * speed;
 
         yield return new WaitForSeconds(.5f);
         rb.velocity = new Vector2(0, 0);
+        checkerAnimator.SetTrigger("Idle");
     }
 
     IEnumerator MoveDownRight()
     {
+        checkerAnimator.SetTrigger("DownRight");
         moving = false;
         attackCoolDownTimer = attackCoolDown;
         rb.velocity = new Vector2(1, -1) * speed;
 
         yield return new WaitForSeconds(.5f);
         rb.velocity = new Vector2(0, 0);
+        checkerAnimator.SetTrigger("Idle");
     }
 
     private void DontMove()
     {
         moving = false;
         attackCoolDownTimer = attackCoolDown;
+        checkerAnimator.SetTrigger("Idle");
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -124,5 +136,10 @@ public class checkermovement : MonoBehaviour
                 Debug.LogError("PlayerHealth not found");
             }
         }
+    }
+
+    private void OnDestroy()
+    {
+        Instantiate(deathParticle, transform.position, Quaternion.identity);
     }
 }
