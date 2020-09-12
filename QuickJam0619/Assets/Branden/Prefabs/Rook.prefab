@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3862441351291158362}
   - component: {fileID: 3862441351291158361}
   - component: {fileID: -8462793595265619163}
+  - component: {fileID: 5913825322506983282}
   m_Layer: 13
   m_Name: Rook
   m_TagString: Untagged
@@ -168,3 +169,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 75
   Health: 0
+  hitSparks: {fileID: 7249088598687300452, guid: a83ecc80103997a42993cfd002150f71,
+    type: 3}
+--- !u!95 &5913825322506983282
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3862441351291158365}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2c263d2acbf02444daeb7e4de4dc7ada, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

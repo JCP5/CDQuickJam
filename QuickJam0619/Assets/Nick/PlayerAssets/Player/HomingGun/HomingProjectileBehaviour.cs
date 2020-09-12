@@ -21,6 +21,8 @@ public class HomingProjectileBehaviour : MonoBehaviour
     private Vector2 projectileVelocity;
     private Vector2 projectileDirection;
 
+    public GameObject hitParticle;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -46,6 +48,7 @@ public class HomingProjectileBehaviour : MonoBehaviour
         if (collision.gameObject.GetComponent<EnemyHealth>() != null)
         {
             collision.gameObject.GetComponent<EnemyHealth>().TakeDamage(DamageDealt);
+            Instantiate(hitParticle, transform.position, Quaternion.identity);
         }
 
         Destroy(gameObject);

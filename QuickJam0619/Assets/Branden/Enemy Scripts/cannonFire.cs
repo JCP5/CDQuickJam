@@ -21,10 +21,12 @@ public class cannonFire : MonoBehaviour
 
     public float shotForce = 10f;
 
+    private Animator cannonAnimator;
     void Start()
     {
         shotCoolDownTimer = shotCoolDown;
         playerPos = FindObjectOfType<Player>().transform;
+        cannonAnimator = GetComponent<Animator>();
         audSource = this.GetComponent<AudioSource>();
     }
 
@@ -36,7 +38,7 @@ public class cannonFire : MonoBehaviour
         }
         catch
         {
-            
+            return;
         }
 
         if(shotCoolDownTimer > 0)
@@ -46,17 +48,18 @@ public class cannonFire : MonoBehaviour
 
         if(shotCoolDownTimer <= 0)
         {
-            FireCannon();
+            cannonAnimator.SetTrigger("Fire");
+            shotCoolDownTimer = shotCoolDown;
         }
     }
 
-    private void FireCannon()
+    public void FireCannon()
     {
         PlaySound();
         GameObject cannonBall = Instantiate(cannonBallPreFab , firePoint.position, firePoint.rotation);
         Rigidbody2D rb = cannonBall.GetComponent<Rigidbody2D>();
         rb.AddForce(-firePoint.up * shotForce, ForceMode2D.Impulse);
-        shotCoolDownTimer = shotCoolDown;
+        cannonAnimator.SetTrigger("Idle");
     }
 
     private void RotateTowards(Vector2 playerPos)
