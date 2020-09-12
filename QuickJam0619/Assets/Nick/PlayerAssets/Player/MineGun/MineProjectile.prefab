@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6511021928069198654}
   - component: {fileID: 6511021928069198785}
   - component: {fileID: -2893982642551422355}
-  m_Layer: 10
+  m_Layer: 16
   m_Name: MineProjectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -166,7 +166,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4010456683831797475}
   - component: {fileID: 1724312197060580699}
-  m_Layer: 10
+  m_Layer: 16
   m_Name: Point Light 2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -11,6 +11,7 @@ public class GunControl : MonoBehaviour
 
     int activeGun;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -38,7 +39,17 @@ public class GunControl : MonoBehaviour
             {
                 Debug.Log("Gun activated");
                 guns[i].enabled = true;
-                AmmoUI.instance.ChangeAmmoType(i);
+
+                try
+                {
+                    AmmoUI.instance.ChangeAmmoType(i);
+                }
+                catch
+                {
+                    AmmoUI.instance.InitializeAmmoUI();
+                    AmmoUI.instance.ChangeAmmoType(i);
+                }
+
             }
             else
             {

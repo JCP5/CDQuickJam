@@ -8,15 +8,19 @@ public class AmmoUI : MonoBehaviour
     public static AmmoUI instance;
 
     public Sprite[] projSprites;
-    Text ammoCount;
-    Image ammoType;
+    public Text ammoCount;
+    private Image ammoType;
+
+    private void Awake()
+    {
+        InitializeAmmoUI();
+        ammoCount = this.GetComponentInChildren<Text>();
+        ammoType = this.GetComponent<Image>();
+    }
 
     private void Start()
     {
-        InitializeAmmoUI();
-
-        ammoCount = this.GetComponentInChildren<Text>();
-        ammoType = this.GetComponent<Image>();
+       
     }
 
     public void ChangeAmmoType(int index)
@@ -36,7 +40,7 @@ public class AmmoUI : MonoBehaviour
         ammoCount.text = ammo.ToString();
     }
 
-    void InitializeAmmoUI()
+    public void InitializeAmmoUI()
     {
         if (instance == null)
             instance = this;

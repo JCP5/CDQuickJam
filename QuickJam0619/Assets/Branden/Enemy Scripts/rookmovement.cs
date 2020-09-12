@@ -24,6 +24,8 @@ public class rookmovement : MonoBehaviour
     private Animator rookAnimator;
 
     public bool moving;
+
+    private bool spawning = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -49,7 +51,7 @@ public class rookmovement : MonoBehaviour
             if (attackCoolDownTimer > 0 && moving == false)
                 attackCoolDownTimer -= Time.deltaTime;
 
-            if (attackCoolDownTimer == 0 && moving == false)
+            if (attackCoolDownTimer == 0 && moving == false && spawning == false)
             {
                 if (Mathf.Abs(playerRelativePosition.x) < (Mathf.Abs(playerRelativePosition.y)) && moving == false)
                 {
@@ -121,6 +123,11 @@ public class rookmovement : MonoBehaviour
 
         yield return new WaitForSeconds(knockBackTime);
         rb.velocity = new Vector2(0, 0);
+    }
+
+    public void SetSpawnFalse()
+    {
+        spawning = false;
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {

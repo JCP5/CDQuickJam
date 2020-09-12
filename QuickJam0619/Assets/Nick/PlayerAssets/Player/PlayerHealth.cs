@@ -4,12 +4,11 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public static PlayerHealth instance;
     public float health;
     public float maxHealth;
 
-    public delegate void deathTime();
-    public event deathTime deathEvent;
+    public delegate void deathDelegate();
+    public event deathDelegate deathEvent;
 
     public void TakeDamage(int Damage)
     {
