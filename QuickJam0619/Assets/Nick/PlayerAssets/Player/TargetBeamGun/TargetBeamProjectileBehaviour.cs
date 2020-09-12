@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class TargetBeamProjectileBehaviour : MonoBehaviour
 {
+    public AudioClip clip;
+    public AudioSource audSource;
+
     //public float LifeTime;
     float BeamSize;
     public int DamageDealt;
@@ -20,6 +23,10 @@ public class TargetBeamProjectileBehaviour : MonoBehaviour
         tbs = player.GetComponent<TargetBeamShooting>();
         BeamSize = tbs.BeamSize;
         DamageDealt = tbs.DamageDealt;
+
+        audSource = this.GetComponent<AudioSource>();
+
+        PlaySound();
 
         //Destroy(gameObject, LifeTime);
     }
@@ -55,5 +62,12 @@ public class TargetBeamProjectileBehaviour : MonoBehaviour
         }
 
         Destroy(this.gameObject);
+    }
+
+    public void PlaySound()
+    {
+        audSource.clip = clip;
+        audSource.Stop();
+        audSource.Play();
     }
 }

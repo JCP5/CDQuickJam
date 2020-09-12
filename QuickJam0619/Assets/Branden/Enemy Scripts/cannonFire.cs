@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class cannonFire : MonoBehaviour
 {
+    public AudioSource audSource;
+    public AudioClip clip;
+
     public Transform firePoint;
 
     public Transform playerPos;
@@ -22,6 +25,7 @@ public class cannonFire : MonoBehaviour
     {
         shotCoolDownTimer = shotCoolDown;
         playerPos = FindObjectOfType<Player>().transform;
+        audSource = this.GetComponent<AudioSource>();
     }
 
     void Update()
@@ -48,6 +52,7 @@ public class cannonFire : MonoBehaviour
 
     private void FireCannon()
     {
+        PlaySound();
         GameObject cannonBall = Instantiate(cannonBallPreFab , firePoint.position, firePoint.rotation);
         Rigidbody2D rb = cannonBall.GetComponent<Rigidbody2D>();
         rb.AddForce(-firePoint.up * shotForce, ForceMode2D.Impulse);
@@ -67,5 +72,12 @@ public class cannonFire : MonoBehaviour
     private void OnDestroy()
     {
         Instantiate(deathParticle, transform.position, Quaternion.identity);
+    }
+
+    public void PlaySound()
+    {
+        audSource.clip = clip;
+        audSource.Stop();
+        audSource.Play();
     }
 }

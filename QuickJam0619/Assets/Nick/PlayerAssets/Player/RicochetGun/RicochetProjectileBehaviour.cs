@@ -5,6 +5,9 @@ using UnityEngine;
 public class RicochetProjectileBehaviour : MonoBehaviour
 {
 
+    public AudioClip clip;
+    public AudioSource audSource;
+
     private Vector2 target;
     private Vector2 playerPos;
 
@@ -22,6 +25,8 @@ public class RicochetProjectileBehaviour : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        audSource = this.GetComponent<AudioSource>();
+
         //This part took me forever to understand, if you don't include a z value here it will always return the 
         //position of the camera
         target = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, -Camera.main.transform.position.z));
@@ -47,6 +52,8 @@ public class RicochetProjectileBehaviour : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        PlaySound();
+
         if (collision.gameObject.GetComponent<EnemyHealth>() != null)
         {
             collision.gameObject.GetComponent<EnemyHealth>().TakeDamage(DamageDealt);
@@ -55,5 +62,12 @@ public class RicochetProjectileBehaviour : MonoBehaviour
         projectileDirection = Vector2.Reflect(projectileDirection, collision.contacts[0].normal);
         float angle = Mathf.Atan2(projectileDirection.y, projectileDirection.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+    }
+
+    public void PlaySound()
+    {
+        audSource.clip = clip;
+        audSource.Stop();
+        audSource.Play();
     }
 }

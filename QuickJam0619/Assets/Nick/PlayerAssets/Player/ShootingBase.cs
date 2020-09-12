@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class ShootingBase : MonoBehaviour
 {
-
+    public AudioClip clip;
+    public AudioSource audSource;
 
     protected AmmoControl ammoScript;
     public int AmmoPerShot;
@@ -48,4 +49,10 @@ public class ShootingBase : MonoBehaviour
         return FireRateTickingCooldown <= 0;
     }
 
+    public void PlaySound()
+    {
+        audSource.clip = clip;
+        audSource.Stop();
+        audSource.Play();
+    }
 }

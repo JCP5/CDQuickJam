@@ -30,13 +30,13 @@ public class ShaderBeatEmission : MonoBehaviour
         mat.SetFloat("_Frequency", 0);
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         if (beatOffset > 0)
         {
             if (offsetTime > 0)
             {
-                offsetTime -= Time.deltaTime;
+                offsetTime -= Time.fixedDeltaTime;
             }
             else
             {
@@ -53,9 +53,9 @@ public class ShaderBeatEmission : MonoBehaviour
     {
         if (secondsPerBeat > 0)
         {
-            secondsPerBeat -= Time.deltaTime;
+            secondsPerBeat -= Time.fixedDeltaTime;
 
-            float intensity = mat.GetFloat("_Frequency") - Time.deltaTime * (emissiveIntesity) * fadeOutStrength;
+            float intensity = mat.GetFloat("_Frequency") - Time.fixedDeltaTime * (emissiveIntesity) * fadeOutStrength;
             mat.SetFloat("_Frequency", intensity);
         }
         else
