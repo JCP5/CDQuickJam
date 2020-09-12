@@ -21,8 +21,14 @@ public class HealthPickup : Pickup
 
     public override void PickupBehaviour(Collision2D collision)
     {
+
         if (collision.gameObject.GetComponent<PlayerHealth>() != null)
         {
+            if (DestroyPickupsOnPickup)
+            {
+                DestroyOtherPickups();
+            }
+
             collision.gameObject.GetComponent<PlayerHealth>().AddMaxHealth(MaxHealthIncrease);
             collision.gameObject.GetComponent<PlayerHealth>().HealCurrentHealth(HealAmount);
         }

@@ -22,8 +22,17 @@ public class ArmorPickup : Pickup
 
     public override void PickupBehaviour(Collision2D collision)
     {
-        collision.gameObject.GetComponent<PlayerHealth>().AddArmorHealth(ArmorHealthIncrease);
-        collision.gameObject.GetComponent<PlayerHealth>().AddFlatArmorReduction(FlatReductionIncrease);
-        collision.gameObject.GetComponent<PlayerHealth>().AddPercentageArmorReduction(PercentageReductionIncrease);
+        if (collision.gameObject.GetComponent<PlayerHealth>() != null)
+        {
+
+            if (DestroyPickupsOnPickup)
+            {
+                DestroyOtherPickups();
+            }
+
+            collision.gameObject.GetComponent<PlayerHealth>().AddArmorHealth(ArmorHealthIncrease);
+            collision.gameObject.GetComponent<PlayerHealth>().AddFlatArmorReduction(FlatReductionIncrease);
+            collision.gameObject.GetComponent<PlayerHealth>().AddPercentageArmorReduction(PercentageReductionIncrease);
+        }
     }
 }

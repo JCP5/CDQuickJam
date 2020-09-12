@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Pickup : MonoBehaviour
 {
+    public bool DestroyPickupsOnPickup = true;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,6 +33,21 @@ public class Pickup : MonoBehaviour
 
     public virtual void PickupBehaviour(Collision2D collision)
     {
+        if (DestroyPickupsOnPickup)
+        {
+            DestroyOtherPickups();
+        }
+    }
 
+    public void DestroyOtherPickups()
+    {
+        Object[] other_pickups;
+
+        other_pickups = FindObjectsOfType(typeof(Pickup));
+
+        foreach (Pickup single_pickup in other_pickups)
+        {
+            Destroy(single_pickup);
+        }
     }
 }
