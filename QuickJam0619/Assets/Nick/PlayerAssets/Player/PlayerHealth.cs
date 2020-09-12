@@ -154,7 +154,10 @@ public class PlayerHealth : MonoBehaviour
 
     public void HealCurrentHealth(float HealAmount)
     {
-        HealAmount = Mathf.Clamp(HealAmount + Health, 0, MaxHealth);
+        Health = Mathf.Clamp(HealAmount + Health, 0, MaxHealth);
+
+        HealthBar.instance.SetHealthBarScale(Health / MaxHealth);
+        Debug.Log("Health % " + Health / MaxHealth);
     }
 
     private void OnDestroy()

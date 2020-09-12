@@ -60,7 +60,7 @@ public class Spawner : MonoBehaviour
     {
         for (int i = 0; i < pickupSpawnSpots.Length; i++)
         {
-            Instantiate(pickups[i], pickupSpawnSpots[i].position, Quaternion.identity);
+            Instantiate<GameObject>(pickups[i], pickupSpawnSpots[i].position, Quaternion.identity);
         }
     }
 

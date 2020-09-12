@@ -28,6 +28,11 @@ public class Pickup : MonoBehaviour
             PickupBehaviour(collision);
         }
 
+        if (DestroyPickupsOnPickup)
+        {
+            DestroyOtherPickups();
+        }
+
         Destroy(gameObject);
     }
 
@@ -47,7 +52,7 @@ public class Pickup : MonoBehaviour
 
         foreach (Pickup single_pickup in other_pickups)
         {
-            Destroy(single_pickup);
+            Destroy(single_pickup.gameObject);
         }
     }
 }

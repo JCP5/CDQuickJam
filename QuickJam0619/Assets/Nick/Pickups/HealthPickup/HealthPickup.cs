@@ -24,11 +24,6 @@ public class HealthPickup : Pickup
 
         if (collision.gameObject.GetComponent<PlayerHealth>() != null)
         {
-            if (DestroyPickupsOnPickup)
-            {
-                DestroyOtherPickups();
-            }
-
             collision.gameObject.GetComponent<PlayerHealth>().AddMaxHealth(MaxHealthIncrease);
             collision.gameObject.GetComponent<PlayerHealth>().HealCurrentHealth(HealAmount);
         }

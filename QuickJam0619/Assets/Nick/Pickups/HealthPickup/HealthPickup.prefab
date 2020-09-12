@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3647406198931913881}
   - component: {fileID: 7748747916736347481}
   - component: {fileID: 3767236857794317267}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: HealthPickup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -112,10 +112,10 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 0.0001
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_AngularDrag: 0
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -133,5 +133,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3221828ab5d50a4e88f6f2408f6b136, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HealAmount: 0
+  DestroyPickupsOnPickup: 1
+  HealAmount: 100
   MaxHealthIncrease: 0
