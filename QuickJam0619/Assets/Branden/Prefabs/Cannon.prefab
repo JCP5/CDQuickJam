@@ -95,8 +95,6 @@ GameObject:
   - component: {fileID: 7033320495361767360}
   - component: {fileID: 7033320495361767361}
   - component: {fileID: -997296234353802855}
-  - component: {fileID: 236093163780998417}
-  - component: {fileID: -54428811600478499}
   m_Layer: 12
   m_Name: Cannon
   m_TagString: Untagged
@@ -256,6 +254,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   Health: 0
+  hitSparks: {fileID: 0}
 --- !u!1 &7033320495380282318
 GameObject:
   m_ObjectHideFlags: 0

@@ -8,6 +8,9 @@ public class PlayerHealth : MonoBehaviour
     public float health;
     public float maxHealth;
 
+    public delegate void deathTime();
+    public event deathTime deathEvent;
+
     public void TakeDamage(int Damage)
     {
         health = health - Damage;
