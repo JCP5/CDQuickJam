@@ -140,6 +140,7 @@ public class PlayerHealth : MonoBehaviour
     public void AddFlatArmorReduction(float AddedFlatReduction)
     {
         FlatArmorReduction = Mathf.Clamp((FlatArmorReduction + AddedFlatReduction), 0, MaxFlatArmorReduction);
+        HealthBar.instance.SetArmorText(FlatArmorReduction);
     }
 
     public void AddPercentageArmorReduction(float AddedPercentageReduction)
@@ -147,14 +148,17 @@ public class PlayerHealth : MonoBehaviour
         PercentageArmorReduction = Mathf.Clamp((PercentageArmorReduction + AddedPercentageReduction), 0, MaxArmorPercentage);
     }
 
+    
     public void AddMaxHealth(float MaxHealthIncrease)
     {
         MaxHealth = Mathf.Clamp(MaxHealthIncrease + MaxHealth, 0, HealthIncreaseCap);
     }
+    
 
     public void HealCurrentHealth(float HealAmount)
     {
         Health = Mathf.Clamp(HealAmount + Health, 0, MaxHealth);
+        Debug.Log("Health = " + Health);
 
         HealthBar.instance.SetHealthBarScale(Health / MaxHealth);
         Debug.Log("Health % " + Health / MaxHealth);

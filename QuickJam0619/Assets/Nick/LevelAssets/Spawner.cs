@@ -15,7 +15,7 @@ public class Spawner : MonoBehaviour
     public Transform[] pickupSpawnSpots;
     public GameObject[] pickups;
 
-    public float timeBetweenSpawns;
+    public float timeBetweenSpawns = 1;
     public float startTimeBetweenSpawns = 10;
 
     // Start is called before the first frame update
@@ -44,6 +44,7 @@ public class Spawner : MonoBehaviour
         else
         {
             timeBetweenSpawns -= Time.deltaTime;
+            WaveDisplay.instance.SetWaveTimer(timeBetweenSpawns);
         }
     }
 

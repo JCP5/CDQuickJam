@@ -6,10 +6,12 @@ public class Pickup : MonoBehaviour
 {
     public bool DestroyPickupsOnPickup = true;
 
+    public float destroyTime = 10f;
+
     // Start is called before the first frame update
-    void Start()
+     public void Start()
     {
-        
+        Destroy(this.gameObject, destroyTime);
     }
 
     // Update is called once per frame
@@ -17,8 +19,7 @@ public class Pickup : MonoBehaviour
     {
         
     }
-
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         Debug.Log(collision.gameObject.tag);
         string collisionTag = collision.gameObject.tag;
@@ -26,17 +27,17 @@ public class Pickup : MonoBehaviour
         if (collision.gameObject.GetComponent<PlayerHealth>() != null)
         {
             PickupBehaviour(collision);
+            Destroy(gameObject);
+
+            if (DestroyPickupsOnPickup)
+            {
+                DestroyOtherPickups();
+            }
         }
 
-        if (DestroyPickupsOnPickup)
-        {
-            DestroyOtherPickups();
-        }
-
-        Destroy(gameObject);
     }
 
-    public virtual void PickupBehaviour(Collision2D collision)
+    public virtual void PickupBehaviour(Collider2D collision)
     {
         if (DestroyPickupsOnPickup)
         {

@@ -7,6 +7,7 @@ public class HealthBar : MonoBehaviour
 {
     public static HealthBar instance;
     Image healthBar;
+    public Text armorText;
 
     private void Start()
     {
@@ -22,6 +23,11 @@ public class HealthBar : MonoBehaviour
         }
         else
             Destroy(this.gameObject);
+    }
+
+    public void SetArmorText(float armor)
+    {
+        armorText.text = "Armour: " + armor;
     }
 
     public void SetHealthBarScale(float health)

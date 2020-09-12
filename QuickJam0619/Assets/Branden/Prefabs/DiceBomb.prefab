@@ -127,7 +127,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   explosionRadius: 1
-  damageDealt: 20
+  damageDealt: 45
   explosionParticles: {fileID: 7924173875884080736, guid: a1c258cffd8506d4da307add93c58e14,
     type: 3}
   player: {fileID: 9159012629504833472, guid: 34159fa4529e43b4a886f8332c4700b4, type: 3}

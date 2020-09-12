@@ -96,7 +96,7 @@ Animator:
   m_GameObject: {fileID: 7846126077368147828}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 4cf346691e2faee4b900f5548573a212, type: 2}
+  m_Controller: {fileID: 9100000, guid: 980ceb5e840e96d43ae8e1558ff37a3b, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -120,7 +120,7 @@ MonoBehaviour:
   clip: {fileID: 8300000, guid: 8ae744538d1dbb2468b38e57d0f845c3, type: 3}
   audSource: {fileID: 0}
   DamageDealt: 0
-  explosionPrefab: {fileID: 4259500234756179054, guid: 479988f830a39f54c976d3937115e46f,
+  explosionPrefab: {fileID: 5625760877920189231, guid: 888e2ea030ee65847b2d8a7e3496330f,
     type: 3}
   explosionScale: 0
 --- !u!82 &2233062289071942634
@@ -135,7 +135,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.65
   m_Pitch: 1
   Loop: 0
   Mute: 0

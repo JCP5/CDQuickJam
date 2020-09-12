@@ -101,7 +101,7 @@ MonoBehaviour:
   speed: 11
   attackCoolDown: 1.5
   attackCoolDownTimer: 0
-  damageDealt: 20
+  damageDealt: 25
   knockBackStrength: 1
   knockBackTime: 0.1
   deathparticle: {fileID: 4259500234756179054, guid: 479988f830a39f54c976d3937115e46f,

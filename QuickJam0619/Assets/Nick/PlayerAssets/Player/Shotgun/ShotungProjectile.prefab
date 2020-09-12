@@ -100,7 +100,7 @@ MonoBehaviour:
   adjustmentAngle: 0
   speed: 5
   projectileLifeTime: 5
-  DamageDealt: 35
+  DamageDealt: 15
 --- !u!50 &-4734132233352671482
 Rigidbody2D:
   serializedVersion: 4

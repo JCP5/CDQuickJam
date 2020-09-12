@@ -10,7 +10,7 @@ public class HealthPickup : Pickup
     // Start is called before the first frame update
     void Start()
     {
-
+        base.Start();
     }
 
     // Update is called once per frame
@@ -19,7 +19,7 @@ public class HealthPickup : Pickup
 
     }
 
-    public override void PickupBehaviour(Collision2D collision)
+    public override void PickupBehaviour(Collider2D collision)
     {
 
         if (collision.gameObject.GetComponent<PlayerHealth>() != null)

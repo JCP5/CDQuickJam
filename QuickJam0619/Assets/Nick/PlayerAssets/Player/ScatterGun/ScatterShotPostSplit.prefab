@@ -117,7 +117,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DamageDealt: 20
   projectileDirection: {x: 0, y: 0}
-  speed: 1
+  speed: 2
 --- !u!50 &6424427651461259806
 Rigidbody2D:
   serializedVersion: 4

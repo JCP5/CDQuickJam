@@ -18,7 +18,7 @@ public class FireRatePickup : Pickup
 
     }
 
-    public override void PickupBehaviour(Collision2D collision)
+    public override void PickupBehaviour(Collider2D collision)
     {
         if (collision.gameObject.GetComponent<GunControl>() != null)
         {
