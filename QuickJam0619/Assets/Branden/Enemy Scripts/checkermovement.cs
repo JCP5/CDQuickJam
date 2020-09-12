@@ -9,6 +9,7 @@ public class checkermovement : MonoBehaviour
     public float attackCoolDown = 1.5f;
     public float attackCoolDownTimer = 0f;
     public int damageDealt = 20;
+    private bool spawning;
 
     public GameObject deathParticle;
     public Vector3 playerRelativePosition;
@@ -24,6 +25,7 @@ public class checkermovement : MonoBehaviour
         checkerAnimator = GetComponent<Animator>();
         attackCoolDownTimer = attackCoolDown;
         moving = false;
+        spawning = true;
         player = FindObjectOfType<Player>().transform;
     }
 
@@ -41,7 +43,7 @@ public class checkermovement : MonoBehaviour
             if (attackCoolDownTimer > 0 && moving == false)
                 attackCoolDownTimer -= Time.deltaTime;
 
-            if (attackCoolDownTimer == 0)
+            if (attackCoolDownTimer == 0 && spawning == false)
             {
                 moving = true;
 
@@ -114,6 +116,11 @@ public class checkermovement : MonoBehaviour
         yield return new WaitForSeconds(.5f);
         rb.velocity = new Vector2(0, 0);
         checkerAnimator.SetTrigger("Idle");
+    }
+
+    public void SetSpawnFalse()
+    {
+        spawning = false;
     }
 
     private void DontMove()

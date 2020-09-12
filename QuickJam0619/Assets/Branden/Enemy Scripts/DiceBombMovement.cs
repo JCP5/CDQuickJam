@@ -9,6 +9,8 @@ public class DiceBombMovement : MonoBehaviour
     public float explosionRadius = 1;
     public int damageDealt = 20;
 
+    private bool spawning = true;
+
     public GameObject explosionParticles;
 
     public Transform player;
@@ -26,7 +28,10 @@ public class DiceBombMovement : MonoBehaviour
     {
         try
         {
-            rb.MovePosition(Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime));
+            if(spawning == false)
+            {
+                rb.MovePosition(Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime));
+            }
         }
         catch
         {
@@ -38,6 +43,11 @@ public class DiceBombMovement : MonoBehaviour
     {
         Destroy(this.gameObject);
         //deals damage to player/enemies?
+    }
+
+    public void SetSpawnFalse()
+    {
+        spawning = false;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

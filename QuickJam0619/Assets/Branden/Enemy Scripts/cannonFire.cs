@@ -16,6 +16,8 @@ public class cannonFire : MonoBehaviour
     public float shotCoolDown = 1f;
     public float shotCoolDownTimer = 0f;
 
+    private bool spawning = true;
+
     public float shotForce = 10f;
 
     private Animator cannonAnimator;
@@ -55,6 +57,11 @@ public class cannonFire : MonoBehaviour
         Rigidbody2D rb = cannonBall.GetComponent<Rigidbody2D>();
         rb.AddForce(-firePoint.up * shotForce, ForceMode2D.Impulse);
         cannonAnimator.SetTrigger("Idle");
+    }
+
+    public void SetSpawnFalse()
+    {
+        spawning = false;
     }
 
     private void RotateTowards(Vector2 playerPos)
