@@ -41,7 +41,14 @@ public class ShootingBase : MonoBehaviour
     public void FireShot()
     {
         ammoScript.ShotFired(AmmoPerShot);
-        FireRateTickingCooldown = FireRate;
+        if (gameObject.GetComponent<GunControl>() != null)
+        {
+            FireRateTickingCooldown = FireRate * (1 - gameObject.GetComponent<GunControl>().FireRateImprovementPercentage);
+        }
+        else
+        {
+            FireRateTickingCooldown = FireRate;
+        }
     }
 
     public bool CanShoot()

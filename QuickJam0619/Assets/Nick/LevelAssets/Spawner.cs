@@ -12,6 +12,9 @@ public class Spawner : MonoBehaviour
 
     public Transform[] spawnSpots;
 
+    public Transform[] pickupSpawnSpots;
+    public GameObject[] pickups;
+
     public float timeBetweenSpawns;
     public float startTimeBetweenSpawns = 10;
 
@@ -32,6 +35,8 @@ public class Spawner : MonoBehaviour
         {
             timeBetweenSpawns = startTimeBetweenSpawns + wave;
 
+            SpawnPickups();
+
             AddWave();
 
             SpawnEnemies();
@@ -51,6 +56,14 @@ public class Spawner : MonoBehaviour
         }
     }
 
+    void SpawnPickups()
+    {
+        for (int i = 0; i < pickupSpawnSpots.Length; i++)
+        {
+            Instantiate<GameObject>(pickups[i], pickupSpawnSpots[i].position, Quaternion.identity);
+        }
+    }
+
     public void SubtractNumOfEnemies()
     {
         numOfEnemies--;
@@ -58,6 +71,8 @@ public class Spawner : MonoBehaviour
         if (numOfEnemies <= 0)
         {
             AddWave();
+
+            SpawnPickups();
 
             SpawnEnemies();
 
@@ -78,4 +93,5 @@ public class Spawner : MonoBehaviour
         wave++;
         WaveDisplay.instance.SetWave((int)wave);
     }
+
 }
