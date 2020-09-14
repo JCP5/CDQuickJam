@@ -147,6 +147,6 @@ public class checkermovement : MonoBehaviour
 
     private void OnDestroy()
     {
-        Instantiate(deathParticle, transform.position, Quaternion.identity);
+        //Instantiate(deathParticle, transform.position, Quaternion.identity);
     }
 }

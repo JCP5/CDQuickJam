@@ -20,7 +20,7 @@ public class cannonball : MonoBehaviour
             }
             catch
             {
-                Instantiate(cannonHitParticles, transform.position, Quaternion.identity);
+                //Instantiate(cannonHitParticles, transform.position, Quaternion.identity);
                 Destroy(this.gameObject);
             }
         }

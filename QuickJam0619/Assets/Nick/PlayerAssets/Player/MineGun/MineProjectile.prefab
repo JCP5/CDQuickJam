@@ -79,7 +79,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 9b3c7a081c5a8074b8acad3d48e3bf32, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -107,7 +107,7 @@ MonoBehaviour:
   ProjectileSpeed: 0.5
   explosionPrefab: {fileID: 1827234932764458894, guid: 566ff302fccb3414d84a14f4f9cb5881,
     type: 3}
-  DamageDealt: 35
+  DamageDealt: 50
   Lifetime: 15
   MineScale: {x: 2, y: 2}
   ExplosionSize: 1

@@ -147,6 +147,6 @@ public class rookmovement : MonoBehaviour
 
     private void OnDestroy()
     {
-        Instantiate(deathparticle, transform.position, Quaternion.identity);
+        //Instantiate(deathparticle, transform.position, Quaternion.identity);
     }
 }

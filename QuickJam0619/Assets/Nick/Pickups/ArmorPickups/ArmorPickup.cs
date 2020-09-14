@@ -27,6 +27,8 @@ public class ArmorPickup : Pickup
             collision.gameObject.GetComponent<PlayerHealth>().AddArmorHealth(ArmorHealthIncrease);
             collision.gameObject.GetComponent<PlayerHealth>().AddFlatArmorReduction(FlatReductionIncrease);
             collision.gameObject.GetComponent<PlayerHealth>().AddPercentageArmorReduction(PercentageReductionIncrease);
+            Camera.main.GetComponent<AudioSource>().Stop();
+            Camera.main.GetComponent<AudioSource>().Play();
         }
     }
 }

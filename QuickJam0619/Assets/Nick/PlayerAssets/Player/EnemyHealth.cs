@@ -8,6 +8,7 @@ public class EnemyHealth : MonoBehaviour
     public int Health;
 
     public GameObject hitSparks;
+    public GameObject deathParticle;
 
     private void Start()
     {
@@ -17,9 +18,12 @@ public class EnemyHealth : MonoBehaviour
     public void TakeDamage(int Damage)
     {
         Health = Health - Damage;
-        Instantiate(hitSparks, transform.position, transform.rotation);
 
-        if (Health <= 0)
+        if (Health > 0)
+        {
+            Instantiate(hitSparks, transform.position, transform.rotation);
+        }
+        else if (Health <= 0)
         {
             Destroy(gameObject);
         }
@@ -34,6 +38,12 @@ public class EnemyHealth : MonoBehaviour
         catch
         {
             Debug.LogError("No Spawner Found");
+            Destroy(this.gameObject);
+        }
+
+        if (Health <= 0)
+        {
+            Instantiate(deathParticle, this.transform.position, Quaternion.identity);
         }
     }
 }

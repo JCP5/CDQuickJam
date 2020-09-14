@@ -74,7 +74,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 085953d72f840bf4496c7c728b8f8231, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -159,6 +159,8 @@ MonoBehaviour:
   maxHealth: 40
   Health: 0
   hitSparks: {fileID: 7249088598687300452, guid: a83ecc80103997a42993cfd002150f71,
+    type: 3}
+  deathParticle: {fileID: 4259500234756179054, guid: 479988f830a39f54c976d3937115e46f,
     type: 3}
 --- !u!95 &2891672829050887258
 Animator:

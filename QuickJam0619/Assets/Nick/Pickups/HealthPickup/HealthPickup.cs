@@ -26,6 +26,8 @@ public class HealthPickup : Pickup
         {
             collision.gameObject.GetComponent<PlayerHealth>().AddMaxHealth(MaxHealthIncrease);
             collision.gameObject.GetComponent<PlayerHealth>().HealCurrentHealth(HealAmount);
+            Camera.main.GetComponent<AudioSource>().Stop();
+            Camera.main.GetComponent<AudioSource>().Play();
         }
 
     }

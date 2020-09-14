@@ -8,6 +8,7 @@ public class DiceBombMovement : MonoBehaviour
     public float speed = 3f;
     public float explosionRadius = 1;
     public int damageDealt = 20;
+    public float timer = 4.5f;
 
     private bool spawning = true;
 
@@ -31,6 +32,16 @@ public class DiceBombMovement : MonoBehaviour
             if(spawning == false)
             {
                 rb.MovePosition(Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime));
+                if (timer > 0)
+                {
+                    timer -= Time.deltaTime;
+                }
+                else if (timer <= 0)
+                {
+                    Instantiate(explosionParticles, transform.position, Quaternion.identity);
+                    Explode();
+                    Destroy(this.gameObject);
+                }
             }
         }
         catch
@@ -41,27 +52,6 @@ public class DiceBombMovement : MonoBehaviour
 
     public void Explode()
     {
-        Destroy(this.gameObject);
-        //deals damage to player/enemies?
-    }
-
-    public void SetSpawnFalse()
-    {
-        spawning = false;
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            Explode();
-        }
-    }
-
-    private void OnDestroy()
-    {
-        Instantiate(explosionParticles, transform.position, Quaternion.identity);
-
         Collider2D[] inExplosion = Physics2D.OverlapCircleAll(this.transform.position, explosionRadius);
 
         foreach (Collider2D col in inExplosion)
@@ -74,6 +64,33 @@ public class DiceBombMovement : MonoBehaviour
             {
                 //Stuff
             }
+        }
+
+        //deals damage to player/enemies?
+    }
+
+    public void SetSpawnFalse()
+    {
+        spawning = false;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            Instantiate(explosionParticles, transform.position, Quaternion.identity);
+            Explode();
+            Destroy(this.gameObject);
+        }
+    }
+
+    private void OnDestroy()
+    {
+        EnemyHealth enemyHealth = this.GetComponent<EnemyHealth>();
+        float health = enemyHealth.Health;
+        if (health <= 0)
+        {
+            Explode();
         }
     }
 }

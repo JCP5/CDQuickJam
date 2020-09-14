@@ -84,6 +84,7 @@ GameObject:
   - component: {fileID: 1827234932764458888}
   - component: {fileID: 1827234932764458889}
   - component: {fileID: 6553904149834867190}
+  - component: {fileID: -627790038010354105}
   m_Layer: 0
   m_Name: DeathParticleOrange
   m_TagString: Untagged
@@ -4906,8 +4907,8 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 1ef1ecfdf9c893a418c199b13e4707c3, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 1
+  m_PlayOnAwake: 0
+  m_Volume: 0.35
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -4991,3 +4992,16 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-627790038010354105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1827234932764458894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8895bc096b24db45be7c62d21ca8fc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 0}
